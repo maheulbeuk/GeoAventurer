@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Projet maheu</string>
+    <string name="LoginText">Saisir votre identifiant</string>
+    <string name="PassText">Saisir votre Password</string>
+    <string name="text_login">Saisir un identifiant</string>
+    <string name="text_pass">Saisir un mot de passe</string>
+    <string name="text_conf_pass">Confirmez le mot de passe</string>
+    <string name="text_email">Saisir un e-mail</string>
+</resources>
