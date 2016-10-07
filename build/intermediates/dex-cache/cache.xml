@@ -3,174 +3,174 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_b89fd2bdca5a526ef120f03cd6411d2e998806df\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Users\maheulbeuk\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_99b579c333dc5748cd489bff5e5495c8f1d3e2a0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_64d04f040f4325ad1ea24e2d0b19a5d90c7281a4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\1.9.0\a681c044244d9fc375198588297a39ba78028423\retrofit-1.9.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a681c044244d9fc375198588297a39ba78028423">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-1.9.0_89c75f798d9a836f3aec48ba43b1ee2b209ff0f8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_0d0d1a944914fc4ea9f36f84fde46ae8fc78c3e2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_ed15b30b532e2325eff23309db337664088b5140\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="aeb4c359bb731dd2fb4f6e3576829cf47ad6d182">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_6877c195240523795fdd86f4774b36b8b72fae30\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_c9c00b1297c3aa61584a1045ac5fcb6e10b12aa0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_17a639590de2bb002dda1dc40462135920d47417\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_f64f1574143f58dbdd2f708164b5b3617ce8abcb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_e6b84e53442ac33e4451d6227d4f4388437c9d7c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_33b3d49ff178a12e7e327e5ad7b7b01c73e8d499\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_5fd82804c15291fe7ede4edde61bf49c298b51a8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_2c38d22013ab6e6982e13c0c07dbafbebae68a47\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_0d1eee8aea4c987baf1af7aa8d8d025ef920abb6\classes.dex" />
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_42f1af07ccaa2791d64dde19f3057b4dcc4dc3ea\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jar="C:\Users\Tefa\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\1.9.0\a681c044244d9fc375198588297a39ba78028423\retrofit-1.9.0.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_41731e893f3a2c1916d4c87f195fa70fe1a41950\classes.dex" />
+        sha1="a681c044244d9fc375198588297a39ba78028423">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-1.9.0_21eb30b4ff1b50c421b6c333ad1cd9a93520f2cf\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\maheulbeuk\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_e403e4af6d92c67ec6e04b668888cd9dd5de53d2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2768c49eb13c74b77f5c2d1a88a16bf20f6ba1d5">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_50758b40ddef711bc4daba5bafb06335f18fd7ac\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_21964e589e46e7cdeb79a58bd121eece3bdad49b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_675b7a9138cfdf8da937bbd4f58defe8d65eebc5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="665bd9ea3dfb4cb205ede8fe40eedd0b7bece7ef">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7958df1cec30dd36af91bb3f11342c7ad346999a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_ad33e6afad8a58ed54bae7283a636de6bc99abc6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_11492fe99eca20b7894aa4a47ce8aba30513c089\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.3.1_6704e30f95ad410ee5a41c7b7a8861924ce891a5\classes.dex" />
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.3.1_0f9bee689c966ea23a6953617c5311c1f7b67eed\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="8691ec7421cb3ee13f1a914b185f2cec778ff7ba">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_71d32ffd803ed8cd25f670664e374e3c40778e84\classes.dex" />
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_44b4c11b4e00d4568a934a1fe1ddb5b6631dc162\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_d53f5ed3bf4634c7304df4754353729eefdc5236\classes.dex" />
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_ac8cdbbab0fe969e4ad753d2d609111b6b8b6f8f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_c877aa1ab8d1bf8814ff2f8d59350dd56880b443\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_c8102ffcc7086272df56576425920366317a76ae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_7b5c391c991ba52bcb64fb3f1d35d29ddb6e57cf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_96489a27e8c07a6d4588ab100705dc518d6efc14\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_b27b3eae41dc5b6e63d40a413332191222e57c6a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_dcd43e776e71695c8ac2baa72e4c3dc8aae8512d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Tefa\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\Tefa\AndroidStudioProjects\Projetmaheu\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_ac8feddf6fa30d8506b8cc34c135dff8bab912cc\classes.dex" />
     </item>
 
 </items>

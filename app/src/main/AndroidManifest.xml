@@ -19,7 +19,7 @@
         </activity>
 
         <activity android:name=".Inscription" />
-        <activity android:name=".Bidon" />
+        <activity android:name=".PagePrincipale" />
     </application>
 
 </manifest>

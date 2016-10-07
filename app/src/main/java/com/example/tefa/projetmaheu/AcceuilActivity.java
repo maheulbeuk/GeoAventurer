@@ -127,10 +127,13 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
                                             json_data.getString("Email") + ", Xp:" + json_data.getInt("Xp")
                                             + ", Quest_fini:" + json_data.getInt("Quest_fini")
                                     );
-
-
-                                    // Résultats de la requête
-                                    String resultatRequete = "\n\t" + jArray.getJSONObject(0);
+                                    //Ouverture de la page principale
+                                Intent pagePrincip = new Intent(AcceuilActivity.this, PagePrincipale.class);
+                                pagePrincip.putExtra("id",json_data.getInt("Id"));
+                                pagePrincip.putExtra("identifiant",json_data.getInt("Identifiant"));
+                                pagePrincip.putExtra("xp",json_data.getInt("Xp"));
+                                pagePrincip.putExtra("quest_fini",json_data.getInt("Quest_fini"));
+                                startActivityForResult(pagePrincip, 0);
 
 
                            }

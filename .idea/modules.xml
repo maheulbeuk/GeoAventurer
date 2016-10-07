@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GeoAventurer.iml" filepath="$PROJECT_DIR$/GeoAventurer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projetmaheu.iml" filepath="$PROJECT_DIR$/Projetmaheu.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
