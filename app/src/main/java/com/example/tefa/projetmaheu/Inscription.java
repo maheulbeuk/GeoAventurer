@@ -76,9 +76,9 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
         api.insertUser(
 
                 //Passing the values by getting it from editTexts
-                editTextUsername.getText().toString(),
+                editTextUsername.getText().toString().toLowerCase(),
                 editTextPassword.getText().toString(),
-                editTextEmail.getText().toString(),
+                editTextEmail.getText().toString().toLowerCase(),
                 keys,
 
                 //Creating an anonymous callback
@@ -119,10 +119,12 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
 
+
         Pattern mPattern = Pattern.compile("^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\\.[a-z]{2,4}$");
         Matcher mMatcher = mPattern.matcher(editTextEmail.getText().toString());
         Pattern pPattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}$");
         Matcher pMatcher = pPattern.matcher(editTextPassword.getText().toString());
+
         final Context context = this;
 
         if (pMatcher.matches()) {

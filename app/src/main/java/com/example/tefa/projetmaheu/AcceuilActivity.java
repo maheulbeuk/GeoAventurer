@@ -81,7 +81,7 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
         //Defining the method insertuser of our interface
         api.loginUser(
 
-                LoginText.getText().toString(),
+                LoginText.getText().toString().toLowerCase(),
                 PasswordText.getText().toString(),
                 keys,
                 new Callback<Response>() {
