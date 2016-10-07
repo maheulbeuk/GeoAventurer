@@ -132,72 +132,19 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
                     //Calling insertUser on button click
                     insertUser();
                 } else {
-                    android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(context);
-
-                    // set title
-                    alertDialogBuilder.setTitle("Erreur!");
-
-                    // set dialog message
-                    alertDialogBuilder
-                            .setMessage("Veuillez saisir un email valide!")
-                            .setCancelable(true)
-                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                }
-
-                            });
-
-                    // create alert dialog
-                    android.app.AlertDialog alertDialog = alertDialogBuilder.create();
-
-                    // show it
-                    alertDialog.show();
+                    AlertMessage mailInvalide = new AlertMessage("Erreur", "Veuillez saisir un email valide!", context);
+                    mailInvalide.test();
                 }
 
             } else {
-                android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(context);
-
-                // set title
-                alertDialogBuilder.setTitle("Erreur!");
-
-                // set dialog message
-                alertDialogBuilder
-                        .setMessage("Le mot de passe est différent, veuillez confirmez correctement le mot de passe !")
-                        .setCancelable(true)
-                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                            }
-
-                        });
-
-                // create alert dialog
-                android.app.AlertDialog alertDialog = alertDialogBuilder.create();
-
-                // show it
-                alertDialog.show();
+                AlertMessage passNIdentique = new AlertMessage("Erreur", "Le mot de passe est différent, veuillez confirmez correctement le mot de passe !", context);
+                passNIdentique.test();
             }
         }
         else {
-            android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(context);
-
-            // Choix du titre du message d'erreur
-            alertDialogBuilder.setTitle("Erreur!");
-
-            // Choix du message d'erreur
-            alertDialogBuilder
-                    .setMessage("Le mot de passe doit au moins contenir une Majuscule, une minuscule, un chiffre et doit contenir au moins 6 caractère")
-                    .setCancelable(true)
-                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                        }
-
-                    });
-
-            // creation de alert dialogue
-            android.app.AlertDialog alertDialog = alertDialogBuilder.create();
-
-            // affichage
-            alertDialog.show();
+            AlertMessage passIncorrect = new AlertMessage("Erreur",
+                    "Le mot de passe doit au moins contenir une Majuscule, une minuscule, un chiffre et doit contenir au moins 6 caractère", context);
+            passIncorrect.test();
         }
     }
 

@@ -119,10 +119,8 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
                             }else  if (json_data.getString("Validation").equals("0")) {
                                 AlertMessage compteNActive = new AlertMessage("Erreur", "Votre compte n'a pas eté activé", context);
                                 compteNActive.test();
-                            }else{
-                                    //output = resultat;
-
-                                    //Toast.makeText(AcceuilActivity.this, output, Toast.LENGTH_LONG).show();
+                            }
+                            else{
 
                                     Log.e("log_tag", "Id: " + json_data.getInt("Id") +
                                             ", Identifiant: " + json_data.getString("Identifiant") + ", Email: " +
@@ -164,26 +162,9 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
             loginUser();
         }
         else {
-            android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(context);
-
-            // Choix du titre du message d'erreur
-            alertDialogBuilder.setTitle("Erreur!");
-
-            // Choix du message d'erreur
-            alertDialogBuilder
-                    .setMessage("Le mot de passe doit au moins contenir une Majuscule, une minuscule, un chiffre et doit contenir au moins 6 caractère")
-                    .setCancelable(true)
-                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                        }
-
-                    });
-
-            // creation de alert dialogue
-            android.app.AlertDialog alertDialog = alertDialogBuilder.create();
-
-            // affichage
-            alertDialog.show();
+            AlertMessage passIncorrect = new AlertMessage("Erreur",
+                    "Le mot de passe doit au moins contenir une Majuscule, une minuscule, un chiffre et doit contenir au moins 6 caractère", context);
+            passIncorrect.test();
         }
 
     }
