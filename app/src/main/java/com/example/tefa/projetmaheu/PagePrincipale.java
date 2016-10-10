@@ -25,6 +25,7 @@ public class PagePrincipale extends AppCompatActivity{
                 + ", Quest_fini:" +Quest_fini
         );
 
+
         }
 
 }
