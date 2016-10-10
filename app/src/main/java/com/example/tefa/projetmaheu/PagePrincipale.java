@@ -151,11 +151,12 @@ public class PagePrincipale extends AppCompatActivity {
                         }
 
                         try {
-                            JSONObject  Recup = new JSONObject(resultat);
-                            JSONArray ArrayRecup = Recup.getJSONArray(resultat);
+                            JSONArray ArrayRecup = new  JSONArray(resultat);
+
+
                             for (int i=0;i<ArrayRecup.length();i++) {
                                 JSONObject itemobj = ArrayRecup.getJSONObject(i);
-                                Log.e("log_tag", "Level: " + itemobj.getInt("Id_Level") + ", Xp: " + itemobj.getInt("Xd_Level"));
+                                Log.e("log_tag", "Level: " + itemobj.getInt("Id_Level") + ", Xp: " + itemobj.getInt("Xp_Level"));
 
                             }
                         } catch (JSONException e) {
