@@ -100,14 +100,66 @@ public class PagePrincipale extends AppCompatActivity {
 
                         try {
                             JSONArray jArray = new JSONArray(resultat);
-                            JSONObject json_data = jArray.getJSONObject(0);
-                            //JSONObject RecupListLevel = jArray.getJSONObject(1);
+                            JSONObject RecupdataUser = jArray.getJSONObject(0);
                             JSONObject RecupTotQuest = jArray.getJSONObject(1);
 
-                            Log.e("log_tag", "Identifiant: " + json_data.getString("Identifiant") +
-                                    ", Email: " + json_data.getString("Email") + ", Xp: " +
-                                    json_data.getInt("Xp") + ", Quest_fini:" + json_data.getInt("Quest_fini")
+
+                            Log.e("log_tag", "Identifiant: " + RecupdataUser.getString("Identifiant") +
+                                    ", Email: " + RecupdataUser.getString("Email") + ", Xp: " +
+                                    RecupdataUser.getInt("Xp") + ", Quest_fini:" + RecupdataUser.getInt("Quest_fini")
                                     + ", TotQuest:" + RecupTotQuest.getInt("TotQuest")
+                            );
+
+
+                        } catch (JSONException e) {
+                            Log.e("log_tag", "Erreur dans le parsing des data : " + e.toString());
+                        }
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+                        Log.e("log_tag", "Se suis une erreur : ");
+                    }
+                }
+        );
+
+        keys = "ListLevel";
+
+        Select.ListLevel(
+                keys,
+                new Callback<Response>() {
+                    @Override
+                    public void success(Response result, Response response) {
+                        //On success we will read the server's output using bufferedreader
+                        //Creating a bufferedreader object
+                        BufferedReader reader = null;
+
+                        //An string to store output from the server
+                        String resultat = "";
+
+                        try {
+                            //Initializing buffered reader
+                            reader = new BufferedReader(new InputStreamReader(result.getBody().in()));
+                            StringBuilder sb = new StringBuilder();
+                            String line = null;
+                            while ((line = reader.readLine()) != null) {
+                                sb.append(line + "\n");
+                            }
+                            resultat = sb.toString();
+                        } catch (Exception e) {
+                            Log.e("log_tag", "Erreur dans la conversion du résultat : " + e.toString());
+                        }
+
+                        try {
+                            JSONArray jArray = new JSONArray(resultat);
+                            JSONObject RecupLevel = jArray.getJSONObject(0);
+                            JSONObject RecupdataLevel = RecupLevel.getJSONObject("Id_Level");
+                            JSONObject RecupdataXpLevel = RecupLevel.getJSONObject("Xp_Level");
+
+
+
+                            Log.e("log_tag", "Level: " + RecupdataLevel +
+                                    ", Xp: " + RecupdataXpLevel
                             );
 
 

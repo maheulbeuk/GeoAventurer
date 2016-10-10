@@ -30,4 +30,13 @@ public interface SelectAPI {
             @Field("keys") String keys,
             Callback<Response> callback
     );
+
+    @FormUrlEncoded
+    @POST("/Nicolas/Android/Android_Select.php")
+    public void ListLevel(
+            @Field("keys") String keys,
+            Callback<Response> callback
+    );
 }
+
+
