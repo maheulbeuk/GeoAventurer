@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.StaticLayout;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +29,14 @@ public class PagePrincipale extends AppCompatActivity {
 
     public static final String ROOT_URL = "http://37.187.104.237:88/";
     final Context context = this;
-
+    static int Xp;
+    static int QuestEnd;
+    static int QuestTot;
+    static int QtLevel;
+    static String identifiant;
+    static int Niveau[][];
+    static int LevelUser;
+    static int LevelXpTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,28 +44,16 @@ public class PagePrincipale extends AppCompatActivity {
         setContentView(R.layout.page_principale);
         Bundle extras = this.getIntent().getExtras();
         int IdUser = extras.getInt("id");
+        Xp=0;
+        QuestEnd=0;
+        QuestTot=0;
+        QtLevel=0;
+        identifiant=null;
+        LevelUser=0;
+        LevelXpTotal=0;
         RefreshInfo(IdUser);
 
     }
-
-
-        /*
-        String identifiant = extras.getString("identifiant");
-        int xp = extras.getInt("xp");
-        int quest_fini =extras.getInt("quest_fini");
-        Log.e("log_tag", "Id: " + Id +
-                ", Identifiant: " + identifiant + ", Xp:" + xp
-                + ", Quest_fini:" +quest_fini
-        );
-
-        TextView textViewPseudo = (TextView) findViewById(R.id.pseudo);
-        textViewPseudo.setText(identifiant);
-        TextView textViewXp = (TextView) findViewById(R.id.xp);
-        textViewXp.setText("Expérience: "+String.valueOf(xp));
-        TextView textViewQFini = (TextView) findViewById(R.id.qFinis);
-        textViewQFini.setText("Quêtes finis: "+String.valueOf(quest_fini));
-        }
-           */
 
     public void RefreshInfo(int IdUser) {
 
@@ -68,9 +64,7 @@ public class PagePrincipale extends AppCompatActivity {
 
         //Creating object for our interface
         SelectAPI Select = adapter.create(SelectAPI.class);
-
-        Log.e("log_tag", "Identifiant: " + IdUser);
-
+        ;
 
         Select.PagePrincipal(
                 IdUser,
@@ -102,9 +96,11 @@ public class PagePrincipale extends AppCompatActivity {
                             JSONArray jArray = new JSONArray(resultat);
                             JSONObject RecupdataUser = jArray.getJSONObject(0);
                             JSONObject RecupTotQuest = jArray.getJSONObject(1);
-
-
-                            Log.e("log_tag", "Identifiant: " + RecupdataUser.getString("Identifiant") +
+                            identifiant=RecupdataUser.getString("Identifiant");
+                            QuestEnd=RecupdataUser.getInt("Quest_fini");
+                            Xp=RecupdataUser.getInt("Xp");
+                            QuestTot=RecupTotQuest.getInt("TotQuest");
+                            Log.e("log_tag", "Identifiant: " + identifiant +
                                     ", Email: " + RecupdataUser.getString("Email") + ", Xp: " +
                                     RecupdataUser.getInt("Xp") + ", Quest_fini:" + RecupdataUser.getInt("Quest_fini")
                                     + ", TotQuest:" + RecupTotQuest.getInt("TotQuest")
@@ -153,10 +149,15 @@ public class PagePrincipale extends AppCompatActivity {
                         try {
                             JSONArray ArrayRecup = new  JSONArray(resultat);
 
-
                             for (int i=0;i<ArrayRecup.length();i++) {
                                 JSONObject itemobj = ArrayRecup.getJSONObject(i);
                                 Log.e("log_tag", "Level: " + itemobj.getInt("Id_Level") + ", Xp: " + itemobj.getInt("Xp_Level"));
+                               //for(int j=0;j<=1;j++){
+                              //     if (j==0) {Niveau[i][j]=itemobj.getInt("Id_Level");}
+                             //      else{Niveau[i][j]=itemobj.getInt("Xp_Level");}
+                             //   }
+                              QtLevel=QtLevel+1;
+
 
                             }
                         } catch (JSONException e) {
@@ -170,6 +171,21 @@ public class PagePrincipale extends AppCompatActivity {
                     }
                 }
         );
+
+        // selon xp on doit en deduire le Level
+               // for (int i=0;i<=QtLevel;i++){
+               //     if (Xp < Niveau[i][1]){ LevelUser= Niveau[i][0]; LevelXpTotal= Niveau[i][1];}
+               // }
+
+
+        TextView textViewPseudo = (TextView) findViewById(R.id.pseudo);
+        textViewPseudo.setText(identifiant);
+        TextView textViewXp = (TextView) findViewById(R.id.xp);
+        textViewXp.setText(Xp +"/"+ LevelXpTotal);
+        TextView textViewLevel = (TextView) findViewById(R.id.Level);
+        textViewLevel.setText(LevelUser + "/" + QtLevel );
+        TextView textViewQFini = (TextView) findViewById(R.id.qFinis);
+        textViewQFini.setText(QuestEnd + "/" + QuestTot );
     }
 
 }

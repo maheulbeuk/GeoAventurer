@@ -8,7 +8,8 @@
         android:layout_width="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_height="wrap_content"
-        android:id="@+id/pseudo" />
+        android:id="@+id/pseudo"
+        android:layout_weight="0.04" />
 
     <TextView
         android:text="xp"
@@ -16,12 +17,19 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:id="@+id/xp"
-        android:layout_weight="0.22" />
+        android:layout_weight="0.07" />
+
+    <TextView
+        android:text="Level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Level"
+        android:layout_weight="0.02" />
 
     <TextView
         android:text="Quêtes finis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/qFinis"
-        android:layout_weight="0.10" />
+        android:layout_weight="0.03" />
 </LinearLayout>
