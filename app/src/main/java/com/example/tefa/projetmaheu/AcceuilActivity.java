@@ -129,11 +129,13 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
                                     );
                                     //Ouverture de la page principale
                                 Intent pagePrincip = new Intent(AcceuilActivity.this, PagePrincipale.class);
-                                pagePrincip.putExtra("id",json_data.getInt("Id"));
-                                pagePrincip.putExtra("identifiant",json_data.getInt("Identifiant"));
-                                pagePrincip.putExtra("xp",json_data.getInt("Xp"));
-                                pagePrincip.putExtra("quest_fini",json_data.getInt("Quest_fini"));
-                                startActivityForResult(pagePrincip, 0);
+                                Bundle objetbunble = new Bundle();
+                                objetbunble.putInt("id",json_data.getInt("Id"));
+                                objetbunble.putString("identifiant",json_data.getString("Identifiant"));
+                                objetbunble.putInt("xp",json_data.getInt("Xp"));
+                                objetbunble.putInt("quest_fini",json_data.getInt("Quest_fini"));
+                                pagePrincip.putExtras(objetbunble);
+                                startActivity(pagePrincip);
 
 
                            }
