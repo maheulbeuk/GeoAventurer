@@ -11,14 +11,4 @@ import retrofit.http.POST;
  */
 
 public interface LoginAPI {
-
-    @FormUrlEncoded
-    @POST("/Nicolas/Android/Android_Select.php")
-    public void loginUser(
-            @Field("username") String username,
-            @Field("password") String password,
-            @Field("keys") String keys,
-            Callback<Response> callback
-    );
-
 }

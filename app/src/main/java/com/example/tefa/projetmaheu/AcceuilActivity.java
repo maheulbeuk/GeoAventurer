@@ -76,7 +76,7 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
                 .build(); //Finally building the adapter
         String keys = "identification";
         //Creating object for our interface
-        LoginAPI api = adapter.create(LoginAPI.class);
+        SelectAPI api = adapter.create(SelectAPI.class);
 
         //Defining the method insertuser of our interface
         api.loginUser(
@@ -122,18 +122,15 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
                             }
                             else{
 
-                                    Log.e("log_tag", "Id: " + json_data.getInt("Id") +
+                                  /*  Log.e("log_tag", "Id: " + json_data.getInt("Id") +
                                             ", Identifiant: " + json_data.getString("Identifiant") + ", Email: " +
                                             json_data.getString("Email") + ", Xp:" + json_data.getInt("Xp")
                                             + ", Quest_fini:" + json_data.getInt("Quest_fini")
-                                    );
+                                    );*/
                                     //Ouverture de la page principale
                                 Intent pagePrincip = new Intent(AcceuilActivity.this, PagePrincipale.class);
                                 Bundle objetbunble = new Bundle();
                                 objetbunble.putInt("id",json_data.getInt("Id"));
-                                objetbunble.putString("identifiant",json_data.getString("Identifiant"));
-                                objetbunble.putInt("xp",json_data.getInt("Xp"));
-                                objetbunble.putInt("quest_fini",json_data.getInt("Quest_fini"));
                                 pagePrincip.putExtras(objetbunble);
                                 startActivity(pagePrincip);
 
