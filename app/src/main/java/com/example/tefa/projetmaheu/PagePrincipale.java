@@ -151,18 +151,13 @@ public class PagePrincipale extends AppCompatActivity {
                         }
 
                         try {
-                            JSONArray jArray = new JSONArray(resultat);
-                            JSONObject RecupLevel = jArray.getJSONObject(0);
-                            JSONObject RecupdataLevel = RecupLevel.getJSONObject("Id_Level");
-                            JSONObject RecupdataXpLevel = RecupLevel.getJSONObject("Xp_Level");
+                            JSONObject  Recup = new JSONObject(resultat);
+                            JSONArray ArrayRecup = Recup.getJSONArray(resultat);
+                            for (int i=0;i<ArrayRecup.length();i++) {
+                                JSONObject itemobj = ArrayRecup.getJSONObject(i);
+                                Log.e("log_tag", "Level: " + itemobj.getInt("Id_Level") + ", Xp: " + itemobj.getInt("Xd_Level"));
 
-
-
-                            Log.e("log_tag", "Level: " + RecupdataLevel +
-                                    ", Xp: " + RecupdataXpLevel
-                            );
-
-
+                            }
                         } catch (JSONException e) {
                             Log.e("log_tag", "Erreur dans le parsing des data : " + e.toString());
                         }
