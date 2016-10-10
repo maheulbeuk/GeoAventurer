@@ -102,11 +102,13 @@ public class PagePrincipale extends AppCompatActivity {
                         try {
                             JSONArray jArray = new JSONArray(resultat);
                             JSONObject json_data = jArray.getJSONObject(0);
+                            //JSONObject RecupListLevel = jArray.getJSONObject(1);
+                            JSONObject RecupTotQuest = jArray.getJSONObject(1);
 
                             Log.e("log_tag", "Identifiant: " + json_data.getString("Identifiant") +
                                     ", Email: " + json_data.getString("Email") + ", Xp: " +
                                     json_data.getInt("Xp") + ", Quest_fini:" + json_data.getInt("Quest_fini")
-                                    + ", TotQuest:" + json_data.getInt("TotQuest") + ", Id_Level:" + json_data.getInt("Id_Level")
+                                    + ", TotQuest:" + RecupTotQuest.getInt("TotQuest")
                             );
 
 
