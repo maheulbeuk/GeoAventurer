@@ -15,7 +15,8 @@ public class PagePrincipale extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_principale);
-        Bundle extras = new Bundle();
+        Bundle extras  = this.getIntent().getExtras();
+
         int Id = extras.getInt("id");
         String Identifiant = extras.getString("Identifiant");
         int Xp = extras.getInt("xp");
