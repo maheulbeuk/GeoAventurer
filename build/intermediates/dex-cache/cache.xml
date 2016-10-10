@@ -61,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="13ade60732b6a60ebd5b0bc09a969ad30d69f456">
+        sha1="2110f18b9d049c90c5aefa0bbef21ead37b494aa">
         <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_6877c195240523795fdd86f4774b36b8b72fae30\classes.dex" />
     </item>
     <item
@@ -160,7 +160,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="362a52a4c2d3d78b0f41febd1f44e3ee7016625c">
+        sha1="bb151f39943401ea61866f9db077169835344c57">
         <dex dex="C:\Users\maheulbeuk\Documents\GeoAventurer\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_71d32ffd803ed8cd25f670664e374e3c40778e84\classes.dex" />
     </item>
     <item

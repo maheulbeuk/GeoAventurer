@@ -92,7 +92,6 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
                         BufferedReader reader = null;
 
                         //An string to store output from the server
-                        String output = "";
                         String resultat = "";
 
                             try {

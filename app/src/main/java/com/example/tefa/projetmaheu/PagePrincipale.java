@@ -83,7 +83,6 @@ public class PagePrincipale extends AppCompatActivity {
                         BufferedReader reader = null;
 
                         //An string to store output from the server
-                        String output = "";
                         String resultat = "";
 
                         try {
