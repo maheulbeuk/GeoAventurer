@@ -6,6 +6,7 @@
     <TextView
         android:text="pseudo"
         android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_height="wrap_content"
         android:id="@+id/pseudo" />
 
