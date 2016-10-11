@@ -148,22 +148,30 @@ public class PagePrincipale extends AppCompatActivity {
 
                         try {
                             JSONArray ArrayRecup = new  JSONArray(resultat);
+                            niveau = new int[ArrayRecup.length()][2];
+                            int qtLevel = ArrayRecup.length();
 
-                            int qtLevel = 0;
-
-                            for (int i=0;i<ArrayRecup.length();i++) {
+                            for (int i=0;i<ArrayRecup.length()-1;i++) {
                                 JSONObject itemobj = ArrayRecup.getJSONObject(i);
                                 Log.e("log_tag", "Level: " + itemobj.getInt("Id_Level") + ", Xp: " + itemobj.getInt("Xp_Level"));
                                 for(int j=0;j<=1;j++){
-                                   if (j==0) {niveau[i][j]=itemobj.getInt("Id_Level");}
-                                   else{niveau[i][j]=itemobj.getInt("Xp_Level");}
+                                    int level = itemobj.getInt("Id_Level");
+                                    int xpLevel = itemobj.getInt("Xp_Level");
+                                   if (j==0) {
+                                       niveau[i][j]=level;
+                                   }
+                                   else{
+                                       niveau[i][j]=xpLevel;
+                                   }
                                 }
-                             qtLevel++;
                             }
                             constant.setQtLevel(qtLevel);
                             //selon xp on doit en deduire le Level
                              for (int i=0;i<=qtLevel;i++){
-                                 if (niveau[i][1]>constant.getXp()){ constant.setLevel(niveau[i][0]);constant.setXpLevel(niveau[i][1]);}
+                                 if (niveau[i][1]>constant.getXp()){
+                                     constant.setLevel(niveau[i][0]);
+                                     constant.setXpLevel(niveau[i][1]);
+                                 }
                              }
                             TextView textViewXp = (TextView) findViewById(R.id.xp);
                             textViewXp.setText(constant.getXp() +"/"+ constant.getXpLevel());
