@@ -29,14 +29,8 @@ public class PagePrincipale extends AppCompatActivity {
 
     public static final String ROOT_URL = "http://37.187.104.237:88/";
     final Context context = this;
-    static int Xp;
-    static int QuestEnd;
-    static int QuestTot;
-    static int QtLevel;
-    static String identifiant;
-    static int Niveau[][];
-    static int LevelUser;
-    static int LevelXpTotal;
+    public static int niveau[][];
+    Constant constant = new Constant();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +38,14 @@ public class PagePrincipale extends AppCompatActivity {
         setContentView(R.layout.page_principale);
         Bundle extras = this.getIntent().getExtras();
         int IdUser = extras.getInt("id");
-        Xp=0;
+        /*Xp = 0;
         QuestEnd=0;
         QuestTot=0;
         QtLevel=0;
         identifiant=null;
         LevelUser=0;
-        LevelXpTotal=0;
+        LevelXpTotal=0;*/
         RefreshInfo(IdUser);
-
     }
 
     public void RefreshInfo(int IdUser) {
@@ -96,16 +89,23 @@ public class PagePrincipale extends AppCompatActivity {
                             JSONArray jArray = new JSONArray(resultat);
                             JSONObject RecupdataUser = jArray.getJSONObject(0);
                             JSONObject RecupTotQuest = jArray.getJSONObject(1);
-                            identifiant=RecupdataUser.getString("Identifiant");
-                            QuestEnd=RecupdataUser.getInt("Quest_fini");
-                            Xp=RecupdataUser.getInt("Xp");
-                            QuestTot=RecupTotQuest.getInt("TotQuest");
-                            Log.e("log_tag", "Identifiant: " + identifiant +
+
+                            Log.e("log_tag", "Identifiant: " + RecupdataUser.getString("Identifiant") +
                                     ", Email: " + RecupdataUser.getString("Email") + ", Xp: " +
                                     RecupdataUser.getInt("Xp") + ", Quest_fini:" + RecupdataUser.getInt("Quest_fini")
                                     + ", TotQuest:" + RecupTotQuest.getInt("TotQuest")
                             );
 
+                            constant.setIdentifiant(RecupdataUser.getString("Identifiant"));
+                            constant.setXp(RecupdataUser.getInt("Xp"));
+                            constant.setqFini(RecupdataUser.getInt("Quest_fini"));
+                            constant.setTotQuest(RecupTotQuest.getInt("TotQuest"));
+                            Log.e("popo",constant.getIdentifiant());
+                            TextView textViewPseudo = (TextView) findViewById(R.id.pseudo);
+                            textViewPseudo.setText(constant.getIdentifiant());
+
+                            TextView textViewQFini = (TextView) findViewById(R.id.qFinis);
+                            textViewQFini.setText(constant.getqFini() + "/" + constant.getTotQuest());
 
                         } catch (JSONException e) {
                             Log.e("log_tag", "Erreur dans le parsing des data : " + e.toString());
@@ -149,17 +149,27 @@ public class PagePrincipale extends AppCompatActivity {
                         try {
                             JSONArray ArrayRecup = new  JSONArray(resultat);
 
+                            int qtLevel = 0;
+
                             for (int i=0;i<ArrayRecup.length();i++) {
                                 JSONObject itemobj = ArrayRecup.getJSONObject(i);
                                 Log.e("log_tag", "Level: " + itemobj.getInt("Id_Level") + ", Xp: " + itemobj.getInt("Xp_Level"));
-                               //for(int j=0;j<=1;j++){
-                              //     if (j==0) {Niveau[i][j]=itemobj.getInt("Id_Level");}
-                             //      else{Niveau[i][j]=itemobj.getInt("Xp_Level");}
-                             //   }
-                              QtLevel=QtLevel+1;
-
-
+                                for(int j=0;j<=1;j++){
+                                   if (j==0) {niveau[i][j]=itemobj.getInt("Id_Level");}
+                                   else{niveau[i][j]=itemobj.getInt("Xp_Level");}
+                                }
+                             qtLevel++;
                             }
+                            constant.setQtLevel(qtLevel);
+                            //selon xp on doit en deduire le Level
+                             for (int i=0;i<=qtLevel;i++){
+                                 if (niveau[i][1]>constant.getXp()){ constant.setLevel(niveau[i][0]);constant.setXpLevel(niveau[i][1]);}
+                             }
+                            TextView textViewXp = (TextView) findViewById(R.id.xp);
+                            textViewXp.setText(constant.getXp() +"/"+ constant.getXpLevel());
+                            TextView textViewLevel = (TextView) findViewById(R.id.Level);
+                            textViewLevel.setText(constant.getLevel()+ "/" + qtLevel );
+
                         } catch (JSONException e) {
                             Log.e("log_tag", "Erreur dans le parsing des data : " + e.toString());
                         }
@@ -176,16 +186,6 @@ public class PagePrincipale extends AppCompatActivity {
                // for (int i=0;i<=QtLevel;i++){
                //     if (Xp < Niveau[i][1]){ LevelUser= Niveau[i][0]; LevelXpTotal= Niveau[i][1];}
                // }
-
-
-        TextView textViewPseudo = (TextView) findViewById(R.id.pseudo);
-        textViewPseudo.setText(identifiant);
-        TextView textViewXp = (TextView) findViewById(R.id.xp);
-        textViewXp.setText(Xp +"/"+ LevelXpTotal);
-        TextView textViewLevel = (TextView) findViewById(R.id.Level);
-        textViewLevel.setText(LevelUser + "/" + QtLevel );
-        TextView textViewQFini = (TextView) findViewById(R.id.qFinis);
-        textViewQFini.setText(QuestEnd + "/" + QuestTot );
     }
 
 }

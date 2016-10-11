@@ -11,7 +11,7 @@ public class Constant {
     private int xpLevel;
     private int level;
     private int qtLevel;
-    private int[][] niveau;
+    private int niveau[][];
     private int qFini;
     private int totQuest;
 
