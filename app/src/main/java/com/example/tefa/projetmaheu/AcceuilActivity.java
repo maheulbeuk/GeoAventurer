@@ -63,8 +63,6 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
             }
         });
 
-
-
     }
 
     public void loginUser() {
