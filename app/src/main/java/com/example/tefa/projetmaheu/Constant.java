@@ -11,7 +11,6 @@ public class Constant {
     private int xpLevel;
     private int level;
     private int qtLevel;
-    private int niveau[][];
     private int qFini;
     private int totQuest;
 
@@ -53,14 +52,6 @@ public class Constant {
 
     public void setQtLevel(int qtLevel) {
         this.qtLevel = qtLevel;
-    }
-
-    public int[][] getNiveau() {
-        return niveau;
-    }
-
-    public void setNiveau(int[][] niveau) {
-        this.niveau = niveau;
     }
 
     public int getqFini() {

@@ -103,7 +103,6 @@ public class PagePrincipale extends AppCompatActivity {
                             Log.e("popo",constant.getIdentifiant());
                             TextView textViewPseudo = (TextView) findViewById(R.id.pseudo);
                             textViewPseudo.setText(constant.getIdentifiant());
-
                             TextView textViewQFini = (TextView) findViewById(R.id.qFinis);
                             textViewQFini.setText(constant.getqFini() + "/" + constant.getTotQuest());
 
@@ -120,7 +119,6 @@ public class PagePrincipale extends AppCompatActivity {
         );
 
         keys = "ListLevel";
-
         Select.ListLevel(
                 keys,
                 new Callback<Response>() {
@@ -151,7 +149,7 @@ public class PagePrincipale extends AppCompatActivity {
                             niveau = new int[ArrayRecup.length()][2];
                             int qtLevel = ArrayRecup.length();
 
-                            for (int i=0;i<ArrayRecup.length()-1;i++) {
+                            for (int i=0;i<ArrayRecup.length();i++) {
                                 JSONObject itemobj = ArrayRecup.getJSONObject(i);
                                 Log.e("log_tag", "Level: " + itemobj.getInt("Id_Level") + ", Xp: " + itemobj.getInt("Xp_Level"));
                                 for(int j=0;j<=1;j++){
@@ -167,8 +165,8 @@ public class PagePrincipale extends AppCompatActivity {
                             }
                             constant.setQtLevel(qtLevel);
                             //selon xp on doit en deduire le Level
-                             for (int i=0;i<=qtLevel;i++){
-                                 if (niveau[i][1]>constant.getXp()){
+                             for (int i=0;i<=qtLevel-1;i++){
+                                 if (niveau[i][1]<=constant.getXp()){
                                      constant.setLevel(niveau[i][0]);
                                      constant.setXpLevel(niveau[i][1]);
                                  }
