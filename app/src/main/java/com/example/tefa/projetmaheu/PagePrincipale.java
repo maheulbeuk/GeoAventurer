@@ -1,13 +1,10 @@
 package com.example.tefa.projetmaheu;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.StaticLayout;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -148,8 +145,8 @@ public class PagePrincipale extends AppCompatActivity {
                             JSONArray ArrayRecup = new  JSONArray(resultat);
                             niveau = new int[ArrayRecup.length()][2];
                             int qtLevel = ArrayRecup.length();
-
-                            for (int i=0;i<ArrayRecup.length();i++) {
+                            int i=0;
+                            for (i=0;i<ArrayRecup.length();i++) {
                                 JSONObject itemobj = ArrayRecup.getJSONObject(i);
                                 Log.e("log_tag", "Level: " + itemobj.getInt("Id_Level") + ", Xp: " + itemobj.getInt("Xp_Level"));
                                 for(int j=0;j<=1;j++){
@@ -165,11 +162,25 @@ public class PagePrincipale extends AppCompatActivity {
                             }
                             constant.setQtLevel(qtLevel);
                             //selon xp on doit en deduire le Level
-                             for (int i=0;i<=qtLevel-1;i++){
-                                 if (niveau[i][1]<=constant.getXp()){
-                                     constant.setLevel(niveau[i][0]);
-                                     constant.setXpLevel(niveau[i][1]);
+                            i=0;
+                             for (i=0;i<=qtLevel-1;i++){
+                                 if (i==0){
+                                     if (constant.getXp()<niveau[i][1]){
+                                         constant.setXpLevel(niveau[i][1]);
+                                         break;
+                                     }
+                                 }else{
+                                     if (niveau[i-1][1] <= constant.getXp() && niveau[i+1][1] >= constant.getXp()){
+                                         constant.setLevel(niveau[i][0]);
+                                         constant.setXpLevel(niveau[i+1][1]);
+                                         break;
+                                     }else if (constant.getXp()>niveau[qtLevel-1][1]) {
+                                         constant.setLevel(niveau[qtLevel-1][0]);
+                                         constant.setXpLevel(niveau[qtLevel-1][1]);
+                                         break;
+                                     }
                                  }
+
                              }
                             TextView textViewXp = (TextView) findViewById(R.id.xp);
                             textViewXp.setText(constant.getXp() +"/"+ constant.getXpLevel());
@@ -179,7 +190,7 @@ public class PagePrincipale extends AppCompatActivity {
                         } catch (JSONException e) {
                             Log.e("log_tag", "Erreur dans le parsing des data : " + e.toString());
                         }
-                    }
+                   }
 
                     @Override
                     public void failure(RetrofitError error) {
