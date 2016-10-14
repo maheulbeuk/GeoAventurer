@@ -118,12 +118,12 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
                             else{
                                     //Ouverture de la page principale
                                 Intent pagePrincip = new Intent(AcceuilActivity.this, PagePrincipale.class);
-                               // Bundle objetbunble = new Bundle();
-                                //objetbunble.putInt("id",json_data.getInt("Id"));
-                                constant.setId(json_data.getInt("Id"));
-                                InfoJoueur infoJoueur = new InfoJoueur(json_data.getInt("Id"),constant);
-                                infoJoueur.RefreshInfo(json_data.getInt("Id"));
-                              //  pagePrincip.putExtras(objetbunble);
+                                Bundle objetbunble = new Bundle();
+                                objetbunble.putInt("id",json_data.getInt("Id"));
+                                //constant.setId(json_data.getInt("Id"));
+                                //InfoJoueur infoJoueur = new InfoJoueur(json_data.getInt("Id"),constant);
+                                //infoJoueur.RefreshInfo(json_data.getInt("Id"));
+                                pagePrincip.putExtras(objetbunble);
                                 startActivity(pagePrincip);
 
 

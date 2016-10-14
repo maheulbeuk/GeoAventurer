@@ -98,11 +98,11 @@ public class InfoJoueur {
                                     + ", TotQuest:" + RecupTotQuest.getInt("TotQuest")
                             );
 
-                            getConstant().setIdentifiant(RecupdataUser.getString("Identifiant"));
-                            getConstant().setXp(RecupdataUser.getInt("Xp"));
-                            getConstant().setqFini(RecupdataUser.getInt("Quest_fini"));
-                            getConstant().setTotQuest(RecupTotQuest.getInt("TotQuest"));
-                            Log.e("popo", getConstant().getIdentifiant());
+                            constant.setIdentifiant(RecupdataUser.getString("Identifiant"));
+                            constant.setXp(RecupdataUser.getInt("Xp"));
+                            constant.setqFini(RecupdataUser.getInt("Quest_fini"));
+                            constant.setTotQuest(RecupTotQuest.getInt("TotQuest"));
+
 
                         } catch (JSONException e) {
                             Log.e("log_tag", "Erreur dans le parsing des data : " + e.toString());
@@ -160,23 +160,23 @@ public class InfoJoueur {
                                     }
                                 }
                             }
-                            getConstant().setQtLevel(qtLevel);
+                            constant.setQtLevel(qtLevel);
                             //selon xp on doit en deduire le Level
                             i = 0;
                             for (i = 0; i <= qtLevel - 1; i++) {
                                 if (i == 0) {
-                                    if (getConstant().getXp() < niveau[i][1]) {
-                                        getConstant().setXpLevel(niveau[i][1]);
+                                    if (constant.getXp() < niveau[i][1]) {
+                                        constant.setXpLevel(niveau[i][1]);
                                         break;
                                     }
                                 } else {
-                                    if (niveau[i - 1][1] <= getConstant().getXp() && niveau[i + 1][1] >= getConstant().getXp()) {
-                                        getConstant().setLevel(niveau[i][0]);
-                                        getConstant().setXpLevel(niveau[i + 1][1]);
+                                    if (niveau[i - 1][1] <= constant.getXp() && niveau[i + 1][1] >= constant.getXp()) {
+                                        constant.setLevel(niveau[i][0]);
+                                        constant.setXpLevel(niveau[i + 1][1]);
                                         break;
-                                    } else if (getConstant().getXp() > niveau[qtLevel - 1][1]) {
-                                        getConstant().setLevel(niveau[qtLevel - 1][0]);
-                                        getConstant().setXpLevel(niveau[qtLevel - 1][1]);
+                                    } else if (constant.getXp() > niveau[qtLevel - 1][1]) {
+                                        constant.setLevel(niveau[qtLevel - 1][0]);
+                                        constant.setXpLevel(niveau[qtLevel - 1][1]);
                                         break;
                                     }
                                 }

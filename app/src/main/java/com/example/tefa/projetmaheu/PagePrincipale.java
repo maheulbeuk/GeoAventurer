@@ -31,26 +31,27 @@ public class PagePrincipale extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        RestAdapter adapter = new RestAdapter.Builder()
-                .setEndpoint(ROOT_URL) //Setting the Root URL
-                .build(); //Finally building the adapter
         Bundle extras = this.getIntent().getExtras();
         int IdUser = extras.getInt("id");
-        InfoJoueur infoJoueur = new InfoJoueur(IdUser,constant);
-        infoJoueur.RefreshInfo(IdUser);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_principale);
 
-        TextView textViewPseudo = (TextView) findViewById(R.id.pseudo);
-        textViewPseudo.setText(constant.getIdentifiant());
-        TextView textViewQFini = (TextView) findViewById(R.id.qFinis);
-        TextView textViewXp = (TextView) findViewById(R.id.xp);
-        textViewXp.setText(constant.getXp() +"/"+ constant.getXpLevel());
-        TextView textViewLevel = (TextView) findViewById(R.id.Level);
-        textViewLevel.setText(constant.getLevel()+ "/" + constant.getQtLevel() );
-        textViewQFini.setText(constant.getqFini() + "/" + constant.getTotQuest());
-
+        while(constant.getIdentifiant() != null) {
+            if (constant.getIdentifiant() == null) {
+                InfoJoueur infoJoueur = new InfoJoueur(IdUser, constant);
+                infoJoueur.RefreshInfo(IdUser);
+            } else {
+                TextView textViewPseudo = (TextView) findViewById(R.id.pseudo);
+                textViewPseudo.setText(constant.getIdentifiant());
+                TextView textViewQFini = (TextView) findViewById(R.id.qFinis);
+                TextView textViewXp = (TextView) findViewById(R.id.xp);
+                textViewXp.setText(constant.getXp() + "/" + constant.getXpLevel());
+                TextView textViewLevel = (TextView) findViewById(R.id.Level);
+                textViewLevel.setText(constant.getLevel() + "/" + constant.getQtLevel());
+                textViewQFini.setText(constant.getqFini() + "/" + constant.getTotQuest());
+            }
+        }
         //RefreshInfo(IdUser);
     }
 
