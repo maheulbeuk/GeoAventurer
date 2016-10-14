@@ -39,8 +39,8 @@ public class AlertMessage {
     public void setContext(Context context) {
         this.context = context;
     }
-    //Constructeurs
 
+    //Constructeurs
     public AlertMessage(String pTitle, String pMessage, Context pContext) {
 
         setTitle(pTitle);

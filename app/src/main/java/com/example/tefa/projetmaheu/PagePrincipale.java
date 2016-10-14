@@ -31,21 +31,30 @@ public class PagePrincipale extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.page_principale);
+        RestAdapter adapter = new RestAdapter.Builder()
+                .setEndpoint(ROOT_URL) //Setting the Root URL
+                .build(); //Finally building the adapter
         Bundle extras = this.getIntent().getExtras();
         int IdUser = extras.getInt("id");
-        /*Xp = 0;
-        QuestEnd=0;
-        QuestTot=0;
-        QtLevel=0;
-        identifiant=null;
-        LevelUser=0;
-        LevelXpTotal=0;*/
-        RefreshInfo(IdUser);
+        InfoJoueur infoJoueur = new InfoJoueur(IdUser,constant);
+        infoJoueur.RefreshInfo(IdUser);
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.page_principale);
+
+        TextView textViewPseudo = (TextView) findViewById(R.id.pseudo);
+        textViewPseudo.setText(constant.getIdentifiant());
+        TextView textViewQFini = (TextView) findViewById(R.id.qFinis);
+        TextView textViewXp = (TextView) findViewById(R.id.xp);
+        textViewXp.setText(constant.getXp() +"/"+ constant.getXpLevel());
+        TextView textViewLevel = (TextView) findViewById(R.id.Level);
+        textViewLevel.setText(constant.getLevel()+ "/" + constant.getQtLevel() );
+        textViewQFini.setText(constant.getqFini() + "/" + constant.getTotQuest());
+
+        //RefreshInfo(IdUser);
     }
 
-    public void RefreshInfo(int IdUser) {
+    /*public void RefreshInfo(int IdUser) {
 
         RestAdapter adapter = new RestAdapter.Builder()
                 .setEndpoint(ROOT_URL) //Setting the Root URL
@@ -203,6 +212,6 @@ public class PagePrincipale extends AppCompatActivity {
                // for (int i=0;i<=QtLevel;i++){
                //     if (Xp < Niveau[i][1]){ LevelUser= Niveau[i][0]; LevelXpTotal= Niveau[i][1];}
                // }
-    }
+    }*/
 
 }
