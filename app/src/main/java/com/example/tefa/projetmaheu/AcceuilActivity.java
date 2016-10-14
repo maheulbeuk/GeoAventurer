@@ -1,10 +1,9 @@
 package com.example.tefa.projetmaheu;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -13,23 +12,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.lang.Object;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONException;
 
 public class AcceuilActivity extends AppCompatActivity implements TextWatcher, View.OnClickListener{
 
@@ -37,6 +32,9 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
     private EditText PasswordText;
     private Button button;
     final Context context = this;
+    Constant constant = new Constant();
+
+
 
     public static final String ROOT_URL = "http://37.187.104.237:88/";
 
@@ -118,17 +116,14 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
                                 compteNActive.test();
                             }
                             else{
-
-                                  /*  Log.e("log_tag", "Id: " + json_data.getInt("Id") +
-                                            ", Identifiant: " + json_data.getString("Identifiant") + ", Email: " +
-                                            json_data.getString("Email") + ", Xp:" + json_data.getInt("Xp")
-                                            + ", Quest_fini:" + json_data.getInt("Quest_fini")
-                                    );*/
                                     //Ouverture de la page principale
                                 Intent pagePrincip = new Intent(AcceuilActivity.this, PagePrincipale.class);
-                                Bundle objetbunble = new Bundle();
-                                objetbunble.putInt("id",json_data.getInt("Id"));
-                                pagePrincip.putExtras(objetbunble);
+                               // Bundle objetbunble = new Bundle();
+                                //objetbunble.putInt("id",json_data.getInt("Id"));
+                                constant.setId(json_data.getInt("Id"));
+                                InfoJoueur infoJoueur = new InfoJoueur(json_data.getInt("Id"),constant);
+                                infoJoueur.RefreshInfo(json_data.getInt("Id"));
+                              //  pagePrincip.putExtras(objetbunble);
                                 startActivity(pagePrincip);
 
 
@@ -183,4 +178,5 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
     public void afterTextChanged(Editable s) {
 
     }
+
 }
