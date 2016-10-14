@@ -37,7 +37,7 @@ public class PagePrincipale extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_principale);
 
-        while(constant.getIdentifiant() != null) {
+        while(constant.getIdentifiant() == null) {
             if (constant.getIdentifiant() == null) {
                 InfoJoueur infoJoueur = new InfoJoueur(IdUser, constant);
                 infoJoueur.RefreshInfo(IdUser);
