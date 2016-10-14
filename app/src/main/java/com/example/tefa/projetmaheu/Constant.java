@@ -13,6 +13,15 @@ public class Constant {
     private int qtLevel;
     private int qFini;
     private int totQuest;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getIdentifiant() {
         return identifiant;
