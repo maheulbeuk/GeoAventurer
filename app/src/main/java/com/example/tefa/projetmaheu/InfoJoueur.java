@@ -192,7 +192,7 @@ public class InfoJoueur {
                     public void failure(RetrofitError error) {
                         Log.e("log_tag", "Se suis une erreur : ");
                     }
-                }
+                });
     }
 
 }
