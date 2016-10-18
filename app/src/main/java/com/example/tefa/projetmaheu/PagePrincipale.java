@@ -1,6 +1,5 @@
 package com.example.tefa.projetmaheu;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,44 +17,19 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
+import static com.example.tefa.projetmaheu.AcceuilActivity.ROOT_URL;
+import static com.example.tefa.projetmaheu.AcceuilActivity.constant;
 /**
  * Created by Tefa on 07/10/2016.
  */
 
 public class PagePrincipale extends AppCompatActivity {
 
-    public static final String ROOT_URL = "http://37.187.104.237:88/";
-    final Context context = this;
+    //final Context context = this;
     public static int niveau[][];
-    Constant constant = new Constant();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Bundle extras = this.getIntent().getExtras();
-        int IdUser = extras.getInt("id");
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page_principale);
-
-        while(constant.getIdentifiant() == null) {
-            if (constant.getIdentifiant() == null) {
-                InfoJoueur infoJoueur = new InfoJoueur(IdUser, constant);
-                infoJoueur.RefreshInfo(IdUser);
-            } else {
-                TextView textViewPseudo = (TextView) findViewById(R.id.pseudo);
-                textViewPseudo.setText(constant.getIdentifiant());
-                TextView textViewQFini = (TextView) findViewById(R.id.qFinis);
-                TextView textViewXp = (TextView) findViewById(R.id.xp);
-                textViewXp.setText(constant.getXp() + "/" + constant.getXpLevel());
-                TextView textViewLevel = (TextView) findViewById(R.id.Level);
-                textViewLevel.setText(constant.getLevel() + "/" + constant.getQtLevel());
-                textViewQFini.setText(constant.getqFini() + "/" + constant.getTotQuest());
-            }
-        }
-        //RefreshInfo(IdUser);
-    }
-
-    /*public void RefreshInfo(int IdUser) {
 
         RestAdapter adapter = new RestAdapter.Builder()
                 .setEndpoint(ROOT_URL) //Setting the Root URL
@@ -64,10 +38,9 @@ public class PagePrincipale extends AppCompatActivity {
 
         //Creating object for our interface
         SelectAPI Select = adapter.create(SelectAPI.class);
-        ;
 
         Select.PagePrincipal(
-                IdUser,
+                constant.getId(),
                 keys,
                 new Callback<Response>() {
                     @Override
@@ -96,22 +69,10 @@ public class PagePrincipale extends AppCompatActivity {
                             JSONArray jArray = new JSONArray(resultat);
                             JSONObject RecupdataUser = jArray.getJSONObject(0);
                             JSONObject RecupTotQuest = jArray.getJSONObject(1);
-
-                            Log.e("log_tag", "Identifiant: " + RecupdataUser.getString("Identifiant") +
-                                    ", Email: " + RecupdataUser.getString("Email") + ", Xp: " +
-                                    RecupdataUser.getInt("Xp") + ", Quest_fini:" + RecupdataUser.getInt("Quest_fini")
-                                    + ", TotQuest:" + RecupTotQuest.getInt("TotQuest")
-                            );
-
                             constant.setIdentifiant(RecupdataUser.getString("Identifiant"));
                             constant.setXp(RecupdataUser.getInt("Xp"));
                             constant.setqFini(RecupdataUser.getInt("Quest_fini"));
                             constant.setTotQuest(RecupTotQuest.getInt("TotQuest"));
-                            Log.e("popo",constant.getIdentifiant());
-                            TextView textViewPseudo = (TextView) findViewById(R.id.pseudo);
-                            textViewPseudo.setText(constant.getIdentifiant());
-                            TextView textViewQFini = (TextView) findViewById(R.id.qFinis);
-                            textViewQFini.setText(constant.getqFini() + "/" + constant.getTotQuest());
 
                         } catch (JSONException e) {
                             Log.e("log_tag", "Erreur dans le parsing des data : " + e.toString());
@@ -124,7 +85,7 @@ public class PagePrincipale extends AppCompatActivity {
                     }
                 }
         );
-
+        Log.e("log_tag", "Identifiant: " + constant.getIdentifiant());
         keys = "ListLevel";
         Select.ListLevel(
                 keys,
@@ -152,67 +113,68 @@ public class PagePrincipale extends AppCompatActivity {
                         }
 
                         try {
-                            JSONArray ArrayRecup = new  JSONArray(resultat);
+                            JSONArray ArrayRecup = new JSONArray(resultat);
                             niveau = new int[ArrayRecup.length()][2];
                             int qtLevel = ArrayRecup.length();
-                            int i=0;
-                            for (i=0;i<ArrayRecup.length();i++) {
+                            int i = 0;
+                            for (i = 0; i < ArrayRecup.length(); i++) {
                                 JSONObject itemobj = ArrayRecup.getJSONObject(i);
                                 Log.e("log_tag", "Level: " + itemobj.getInt("Id_Level") + ", Xp: " + itemobj.getInt("Xp_Level"));
-                                for(int j=0;j<=1;j++){
+                                for (int j = 0; j <= 1; j++) {
                                     int level = itemobj.getInt("Id_Level");
                                     int xpLevel = itemobj.getInt("Xp_Level");
-                                   if (j==0) {
-                                       niveau[i][j]=level;
-                                   }
-                                   else{
-                                       niveau[i][j]=xpLevel;
-                                   }
+                                    if (j == 0) {
+                                        niveau[i][j] = level;
+                                    } else {
+                                        niveau[i][j] = xpLevel;
+                                    }
                                 }
                             }
                             constant.setQtLevel(qtLevel);
                             //selon xp on doit en deduire le Level
-                            i=0;
-                             for (i=0;i<=qtLevel-1;i++){
-                                 if (i==0){
-                                     if (constant.getXp()<niveau[i][1]){
-                                         constant.setXpLevel(niveau[i][1]);
-                                         break;
-                                     }
-                                 }else{
-                                     if (niveau[i-1][1] <= constant.getXp() && niveau[i+1][1] >= constant.getXp()){
-                                         constant.setLevel(niveau[i][0]);
-                                         constant.setXpLevel(niveau[i+1][1]);
-                                         break;
-                                     }else if (constant.getXp()>niveau[qtLevel-1][1]) {
-                                         constant.setLevel(niveau[qtLevel-1][0]);
-                                         constant.setXpLevel(niveau[qtLevel-1][1]);
-                                         break;
-                                     }
-                                 }
+                            i = 0;
+                            for (i = 0; i <= qtLevel - 1; i++) {
+                                if (i == 0) {
+                                    if (constant.getXp() < niveau[i][1]) {
+                                        constant.setXpLevel(niveau[i][1]);
+                                        break;
+                                    }
+                                } else {
+                                    if (niveau[i - 1][1] <= constant.getXp() && niveau[i + 1][1] >= constant.getXp()) {
+                                        constant.setLevel(niveau[i][0]);
+                                        constant.setXpLevel(niveau[i + 1][1]);
+                                        break;
+                                    } else if (constant.getXp() > niveau[qtLevel - 1][1]) {
+                                        constant.setLevel(niveau[qtLevel - 1][0]);
+                                        constant.setXpLevel(niveau[qtLevel - 1][1]);
+                                        break;
+                                    }
+                                }
 
-                             }
-                            TextView textViewXp = (TextView) findViewById(R.id.xp);
-                            textViewXp.setText(constant.getXp() +"/"+ constant.getXpLevel());
-                            TextView textViewLevel = (TextView) findViewById(R.id.Level);
-                            textViewLevel.setText(constant.getLevel()+ "/" + qtLevel );
+                            }
 
                         } catch (JSONException e) {
                             Log.e("log_tag", "Erreur dans le parsing des data : " + e.toString());
                         }
-                   }
+                    }
 
                     @Override
                     public void failure(RetrofitError error) {
                         Log.e("log_tag", "Se suis une erreur : ");
                     }
-                }
-        );
+                });
+        setContentView(R.layout.page_principale);
+        TextView textViewPseudo = (TextView) findViewById(R.id.pseudo);
+        TextView textViewQFini = (TextView) findViewById(R.id.qFinis);
+        TextView textViewLevel = (TextView) findViewById(R.id.Level);
+        TextView textViewXp = (TextView) findViewById(R.id.xp);
 
-        // selon xp on doit en deduire le Level
-               // for (int i=0;i<=QtLevel;i++){
-               //     if (Xp < Niveau[i][1]){ LevelUser= Niveau[i][0]; LevelXpTotal= Niveau[i][1];}
-               // }
-    }*/
+        textViewPseudo.setText(constant.getIdentifiant());
+        textViewXp.setText(constant.getXp() + "/" + constant.getXpLevel());
+        textViewLevel.setText(constant.getLevel() + "/" + constant.getQtLevel());
+        textViewQFini.setText(constant.getqFini() + "/" + constant.getTotQuest());
+
+
+    }
 
 }
