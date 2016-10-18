@@ -6,14 +6,14 @@ package com.example.tefa.projetmaheu;
 
 public class Constant {
 
-    public static String identifiant;
-    public static int xp;
-    public static int xpLevel;
-    public static int level;
-    public static int qtLevel;
-    public static int qFini;
-    public static int totQuest;
-    public static int id;
+    String identifiant;
+    int xp;
+    int xpLevel;
+    int level;
+    int qtLevel;
+    static int qFini;
+    int totQuest;
+    int id;
 
    public int getId() {
         return id;

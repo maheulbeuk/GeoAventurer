@@ -26,7 +26,7 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class AcceuilActivity extends AppCompatActivity implements TextWatcher, View.OnClickListener{
+public class AccueilActivity extends AppCompatActivity implements TextWatcher, View.OnClickListener{
 
     private EditText LoginText;
     private EditText PasswordText;
@@ -52,7 +52,7 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
         btnInscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent inscriptionIntent = new Intent(AcceuilActivity.this, Inscription.class);
+                Intent inscriptionIntent = new Intent(AccueilActivity.this, Inscription.class);
                 startActivity(inscriptionIntent);
             }
         });
@@ -115,7 +115,7 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
                                     //Ouverture de la page principale
                                 constant.setId(json_data.getInt("Id"));
 
-                                Intent PagePrincip = new  Intent(AcceuilActivity.this, PagePrincipale.class);
+                                Intent PagePrincip = new  Intent(AccueilActivity.this, PagePrincipale.class);
                                 startActivity(PagePrincip);
 
 
@@ -128,7 +128,7 @@ public class AcceuilActivity extends AppCompatActivity implements TextWatcher, V
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        Toast.makeText(AcceuilActivity.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(AccueilActivity.this, error.toString(), Toast.LENGTH_LONG).show();
                     }
                 }
         );

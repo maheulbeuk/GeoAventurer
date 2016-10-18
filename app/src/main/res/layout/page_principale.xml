@@ -4,7 +4,6 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="pseudo"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -12,7 +11,6 @@
         android:layout_weight="0.04" />
 
     <TextView
-        android:text="xp"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -20,14 +18,12 @@
         android:layout_weight="0.07" />
 
     <TextView
-        android:text="Level"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:id="@+id/Level"
         android:layout_weight="0.02" />
 
     <TextView
-        android:text="Quêtes finis"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:id="@+id/qFinis"
