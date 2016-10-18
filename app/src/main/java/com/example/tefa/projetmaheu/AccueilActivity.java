@@ -115,7 +115,7 @@ public class AccueilActivity extends AppCompatActivity implements TextWatcher, V
                                     //Ouverture de la page principale
                                 constant.setId(json_data.getInt("Id"));
 
-                                Intent PagePrincip = new  Intent(AccueilActivity.this, PagePrincipale.class);
+                                Intent PagePrincip = new  Intent(AccueilActivity.this, PagePrincipal.class);
                                 startActivity(PagePrincip);
 
 
